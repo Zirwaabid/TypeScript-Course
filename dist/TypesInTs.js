@@ -6,22 +6,27 @@ let name = "Zirwa";
 let cups = Math.random() > 0.5 ? "10" : 5;
 // now ts understand that types of cups is string | number
 // ***annotations
+// string
 let data = "zirwa";
 data = "developer";
 //  we assign the data type by ourself so this is annotation 
 // some other annotations:
+// unknown
 let value = "Zirwa";
 if (typeof value === "string") {
     value = value.toUpperCase();
     console.log(value);
 }
+// function data types
 function add(a, b) {
     return a + b;
 }
 console.log(add(2, 5));
+// array 
 let members = ["zirwa", "anas", "sara"];
 members.push("ahmed");
 console.log(members);
+// object data type 
 let user1;
 user1 = {
     name: "zirwa",
@@ -70,10 +75,10 @@ currentUser = {
 function registerUser(user) {
     return "User registered";
 }
-const use2 = {
+const user2 = {
     name: "zirwa",
     email: "zirwa@gmail.com",
     age: 21
 };
-console.log(registerUser(use2));
+console.log(registerUser(user2));
 //# sourceMappingURL=TypesInTs.js.map

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build":"tsc",
-    "start": "node dist/TypesInTs.js"
+    "start": "node dist/UnionAndAny.js"
   },
   "keywords": [],
   "author": "",
