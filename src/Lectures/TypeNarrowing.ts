@@ -1,4 +1,4 @@
-// type narrowing 
+// type narrowing >> typeScript is all about checking or narrowing the types in different ways
 
 // >>> 1-
 // typof: use to narrow primitive types
@@ -58,3 +58,54 @@ function serveOrder(FastFood: Pizza | Burger) {
         return FastFood.serve();
     }
 }
+
+// >>>5
+// custom type guards : validate object structure
+type ChaiOrder = {
+    type: string
+    sugar: number
+}
+
+
+function isChaiOrder(obj: any): obj is ChaiOrder {
+    return (
+        typeof obj === "object" && obj !== null && typeof obj.type === "string" && typeof obj.sugar === "number"
+    )
+}
+
+function serveChai(item: ChaiOrder | string) {
+    if (isChaiOrder(item)) {
+        return `Here is your Chai of type ${item.type} with the ${item.sugar} spoon of sugar`
+    }
+    return `Serving custom chai ${item}`
+}
+
+// console.log(serveChai({ type: "masala", sugar: 2 }))
+
+
+// >> 6 
+// • switch / conditions → handle all possible cases
+
+type MasalaChai = { type: "masala", spicelevel: number };
+type GingerChai = { type: "ginger", quantity: number };
+type elaichiChai = { type: "elaichi", amount: number };
+
+type Chai = MasalaChai | GingerChai | elaichiChai
+
+function MakeChai(order: Chai) {
+    switch (order.type) {
+        case "masala":
+            return `masala chai with spice level ${order.spicelevel}`
+            break;
+        case "ginger":
+            return `ginger chai with quantity ${order.quantity}`
+            break;
+        case "elaichi":
+            return `elaichi chai with the amout ${order.amount}`
+            break;
+        default: return ` chai.....`
+            break;
+    }
+}
+
+console.log(MakeChai({ type: "masala", spicelevel: 4 }))
