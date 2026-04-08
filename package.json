@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build":"tsc",
-    "start": "node dist/Lectures/TypeNarrowing.js"
+    "start": "node dist/Lectures/MoreTypes.js"
   },
   "keywords": [],
   "author": "",

@@ -63,13 +63,13 @@ function serveChai(item) {
 function MakeChai(order) {
     switch (order.type) {
         case "masala":
-            return `masala chai ${order.spicelevel}`;
+            return `masala chai with spice level ${order.spicelevel}`;
             break;
         case "ginger":
-            return `ginger chai `;
+            return `ginger chai with quantity ${order.quantity}`;
             break;
         case "elaichi":
-            return `elaichi chai`;
+            return `elaichi chai with the amout ${order.amount}`;
             break;
         default:
             return ` chai.....`;
