@@ -44,3 +44,51 @@ class Chai implements cupSize {
 //  best practice : class with interface
 
 // >>> union and intersection in typescript 
+
+// >>Union / literal type (|) means in the below example tea has only three union options ,means we can use only one of  these three opptions no other option can be used so this is called union type...
+type TeaType = "Ginger" | "Masala" | "lemon"
+function orderChai(t: TeaType) {
+    console.log(t)
+}
+orderChai("Masala");
+
+type Student = { name: string, grade: number }
+type Teacher = { salary: number }
+type Human = Student & Teacher;
+// in intersection (&) it is necessary to use both student and teacher data type like name ,grade , salary
+const schoolAudience: Human = {
+    name: "Zirwa",
+    grade: 15,
+    salary: 23000,
+}
+schoolAudience.name = "NAs"
+console.log(schoolAudience)
+
+// Note : Difference between union or intersection is that in union you can iniatilze the variable with any option but in intersection (combination of many types ) you have to give all options that you declared in data type as shown in above example 
+
+// >> in some cases we need to use optional values so use this "?"
+type User = {
+    username: string,
+    bio?: string
+    // so bio is optional
+}
+const u1: User = {
+    username: "Zirwa"
+}
+console.log(u1)
+// so if not use bio , it gives no error because it is optional by using "?"
+
+// >>readonly keyword 
+type config = {
+    readonly appName: string;
+    version: number
+}
+
+const cfg: config = {
+    appName: "Centrum",
+    version: 2,
+
+}
+// cfg.appName="rxai"
+
+// by using read only , we cannot assign any other value to that variable which are readonly like in above example appname is readonly that is initialize with centrum so no other value is assigned to appname 
