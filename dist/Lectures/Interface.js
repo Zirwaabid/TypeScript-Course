@@ -29,6 +29,10 @@ const u1 = {
     username: "Zirwa"
 };
 console.log(u1);
-// so if not use bio , it gives no error because it is optional by using "?"
-// >>readonly keyword 
+const cfg = {
+    appName: "Centrum",
+    version: 2,
+};
+// cfg.appName="rxai"
+// by using read only , we cannot assign any other value to that variable which are readonly like in above example appname is readonly that is initialize with centrum so no other value is assigned to appname 
 //# sourceMappingURL=Interface.js.map
